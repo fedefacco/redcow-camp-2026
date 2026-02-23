@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RedCow Camp 2026 – Estate Sportiva · Sergnano (CR)</title>
+<meta name="description" content="RedCow Camp 2026 — Summer camp di calcio e attività sportive extra per ragazze e ragazzi dai 6 ai 13 anni. 15–19 Giugno, Centro Sportivo Sergnanese (CR).">
+<!-- Font locali -->
+<style>
+/* ══════════════════════════════════════════
+   DESIGN TOKENS
+   Per modificare colori e font: solo qui.
+══════════════════════════════════════════ */
+:root{
+  --red:      #ed1c24;   /* rosso principale */
+  --red-d:    #c4151b;   /* rosso hover */
+  --red-pale: rgba(237,28,36,.07);
+  --red-pale2:rgba(237,28,36,.14);
+  --black:    #0c0c0e;
+  --ink:      #1a1a24;
+  --text:     #2a2a35;
+  --muted:    #6b6b7e;
+  --border:   #e4e4ee;
+  --surface:  #f7f7fb;
+  --white:    #ffffff;
+  --ff-d:'Arial Narrow','Arial',sans-serif;  /* display/titoli */
+  --ff-b:'Arial',sans-serif;                  /* body */
+  --ease:cubic-bezier(.22,.68,0,1.2);
+}
+
+/* ══════════════════════════════════════════ RESET */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--ff-b);background:var(--white);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block;height:auto}
+
+/* ══════════════════════════════════════════ LAYOUT */
+.wrap{max-width:1160px;margin:0 auto;padding:0 2rem}
+.sec{padding:7rem 0}
+.sec-white{background:var(--white)}
+.sec-surface{background:var(--surface)}
+.sec-dark{background:var(--ink)}
+.sec-black{background:var(--black)}
+
+/* ══════════════════════════════════════════ TYPOGRAPHY */
+.label{font-family:var(--ff-d);font-size:.68rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--red);display:block;margin-bottom:.75rem}
+.label-faint{color:rgba(255,255,255,.32)}
+.label-mid{color:var(--muted)}
+.h2{font-family:var(--ff-d);font-size:clamp(2.6rem,5.5vw,4.6rem);font-weight:900;line-height:.95;letter-spacing:.01em;color:var(--ink)}
+.h2 em{font-style:normal;color:var(--red)}
+.h2w{color:var(--white)}
+.h2w em{color:var(--red)}
+.lead{font-size:1.05rem;font-weight:400;color:var(--muted);line-height:1.85;max-width:560px}
+.lead-w{color:rgba(255,255,255,.5)}
+
+/* ══════════════════════════════════════════ BUTTONS */
+.btn{font-family:var(--ff-d);font-size:.85rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;padding:.95rem 2.4rem;border:2px solid transparent;cursor:pointer;transition:all .22s var(--ease);display:inline-flex;align-items:center;gap:.6rem}
+.btn svg{width:14px;height:14px;flex-shrink:0;stroke:currentColor;fill:none;stroke-width:2.5}
+.btn-red{background:var(--red);color:var(--white);border-color:var(--red)}
+.btn-red:hover{background:var(--red-d);border-color:var(--red-d);transform:translateY(-2px);box-shadow:0 12px 32px rgba(237,28,36,.3)}
+.btn-dark{background:var(--ink);color:var(--white);border-color:var(--ink)}
+.btn-dark:hover{background:var(--black);transform:translateY(-2px)}
+.btn-ghost-w{background:transparent;color:var(--white);border-color:rgba(255,255,255,.28)}
+.btn-ghost-w:hover{border-color:var(--white)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--border)}
+.btn-ghost:hover{border-color:var(--ink)}
+
+/* ══════════════════════════════════════════ NAVBAR */
+.nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:66px;background:rgba(255,255,255,.94);backdrop-filter:blur(18px) saturate(180%);border-bottom:1px solid var(--border);transition:box-shadow .3s}
+.nav.scrolled{box-shadow:0 2px 24px rgba(0,0,0,.07)}
+.nav-logo{font-family:var(--ff-d);font-size:1.8rem;font-weight:900;letter-spacing:.05em;line-height:1;white-space:nowrap}
+.nav-logo .r{color:var(--red)}
+.nav-logo .bk{color:var(--ink)}
+.nav-menu{display:flex;align-items:center;gap:.1rem;list-style:none}
+.nav-menu a{font-family:var(--ff-d);font-size:.82rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:.45rem .85rem;transition:color .2s}
+.nav-menu a:hover{color:var(--ink)}
+.nav-menu .ncta a{background:var(--red);color:var(--white);padding:.45rem 1.3rem}
+.nav-menu .ncta a:hover{background:var(--red-d)}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.5rem}
+.burger span{display:block;width:24px;height:2px;background:var(--ink);transition:.3s}
+
+/* ══════════════════════════════════════════ HERO */
+.hero{position:relative;height:100vh;min-height:680px;display:flex;flex-direction:column;overflow:hidden;background:var(--black)}
+/* Layered bg: diagonal stripes + red glow + dark base */
+.hero-bg{position:absolute;inset:0;background:repeating-linear-gradient(105deg,rgba(255,255,255,.015) 0,rgba(255,255,255,.015) 60px,transparent 60px,transparent 120px),radial-gradient(ellipse 75% 55% at 50% 35%,rgba(237,28,36,.16) 0%,transparent 68%),linear-gradient(175deg,#111118 0%,#0c0c0e 100%)}
+/* CSS pitch lines */
+.hero-pitch{position:absolute;inset:0;background:radial-gradient(circle 190px at 50% 53%,transparent 188px,rgba(255,255,255,.05) 189px,rgba(255,255,255,.05) 191px,transparent 192px),radial-gradient(circle 5px at 50% 53%,rgba(255,255,255,.13) 0%,transparent 100%),linear-gradient(90deg,transparent calc(50% - .5px),rgba(255,255,255,.04) calc(50% - .5px),rgba(255,255,255,.04) calc(50% + .5px),transparent calc(50% + .5px)),radial-gradient(circle 95px at 50% 86%,transparent 93px,rgba(255,255,255,.035) 94px,rgba(255,255,255,.035) 96px,transparent 97px),radial-gradient(circle 95px at 50% 20%,transparent 93px,rgba(255,255,255,.035) 94px,rgba(255,255,255,.035) 96px,transparent 97px)}
+/* Noise grain */
+.hero-grain{position:absolute;inset:0;opacity:.18;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:180px;mix-blend-mode:overlay;pointer-events:none}
+/* Bottom fade into page */
+.hero-fade{position:absolute;bottom:0;left:0;right:0;height:220px;background:linear-gradient(to bottom,transparent,var(--black));pointer-events:none}
+/* Content */
+.hero-inner{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:66px 2rem 0}
+.hero-pill{display:inline-flex;align-items:center;gap:.6rem;background:rgba(237,28,36,.13);border:1px solid rgba(237,28,36,.4);color:rgba(255,100,105,1);font-family:var(--ff-d);font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:.45rem 1.2rem;margin-bottom:2rem;animation:rise .7s var(--ease) both}
+.hero-pill svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2}
+/* Giant REDCOW wordmark */
+.hero-wm{font-family:var(--ff-d);font-size:clamp(80px,17vw,200px);font-weight:900;letter-spacing:-.01em;line-height:.88;animation:rise .75s .07s var(--ease) both;display:block;white-space:nowrap}
+.hero-wm .r{color:var(--red);text-shadow:0 0 80px rgba(237,28,36,.5)}
+.hero-wm .w{color:var(--white);text-shadow:0 0 60px rgba(255,255,255,.07)}
+.hero-camp{font-family:var(--ff-d);font-size:clamp(1.5rem,3.5vw,2.8rem);font-weight:700;letter-spacing:.6em;color:rgba(255,255,255,.45);margin-top:.15rem;animation:rise .75s .14s var(--ease) both}
+.hero-tagline{font-family:var(--ff-d);font-size:clamp(1rem,2vw,1.55rem);font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--white);margin-top:1.4rem;animation:rise .75s .2s var(--ease) both}
+.hero-tagline .dot{color:var(--red);margin:0 .2em}
+/* Date/location band */
+.hero-dband{display:flex;align-items:stretch;justify-content:center;border:1px solid rgba(255,255,255,.1);margin-top:1.6rem;animation:rise .75s .28s var(--ease) both}
+.hdb{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:.85rem 2.2rem;border-right:1px solid rgba(255,255,255,.1)}
+.hdb:last-child{border-right:none}
+.hdb-l{font-family:var(--ff-d);font-size:.52rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.3rem}
+.hdb-v{font-family:var(--ff-d);font-size:clamp(.95rem,1.8vw,1.25rem);font-weight:800;color:var(--white);letter-spacing:.03em}
+.hdb-v.accent{color:var(--red)}
+/* CTAs */
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-top:2.4rem;animation:rise .75s .34s var(--ease) both}
+/* Bottom stats bar */
+.hero-bar{position:relative;z-index:2;display:flex;justify-content:center;align-items:stretch;border-top:1px solid rgba(255,255,255,.06);animation:rise .75s .42s var(--ease) both}
+.hbi{padding:1.6rem 3rem;text-align:center;border-right:1px solid rgba(255,255,255,.06);position:relative;overflow:hidden}
+.hbi:last-child{border-right:none}
+.hbi::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+.hbi:hover::after{transform:scaleX(1)}
+.hbi-n{font-family:var(--ff-d);font-size:clamp(1.7rem,3vw,2.5rem);font-weight:900;color:var(--white);line-height:1}
+.hbi-l{font-size:.6rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:.4rem}
+
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+
+/* ══════════════════════════════════════════ TICKER */
+.ticker{background:var(--red);overflow:hidden;padding:.72rem 0}
+.ticker-track{display:inline-flex;align-items:center;gap:3rem;white-space:nowrap;animation:tick 22s linear infinite}
+.ticker-item{font-family:var(--ff-d);font-size:.82rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.9);display:flex;align-items:center;gap:1.2rem}
+.ticker-item::after{content:'◆';font-size:.38rem;color:rgba(255,255,255,.35)}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ══════════════════════════════════════════ ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-top:4rem}
+.about-img-wrap{position:relative}
+.about-img-wrap::before{content:'';position:absolute;top:-1.5rem;left:-1.5rem;width:120px;height:120px;background:var(--red);z-index:0}
+.about-img{width:100%;height:520px;object-fit:cover;display:block;position:relative;z-index:1}
+.about-text p{font-size:.97rem;color:var(--muted);line-height:1.9;margin-bottom:1rem}
+.about-text p strong{color:var(--text);font-weight:600}
+.about-text .h2{margin-bottom:1.4rem}
+.istrip{margin-top:2rem;border-top:1px solid var(--border)}
+.isr{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.85rem 0;border-bottom:1px solid var(--border)}
+.isr:last-child{border-bottom:none}
+.isr-k{font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);flex-shrink:0}
+.isr-v{font-family:var(--ff-d);font-size:1.05rem;font-weight:700;color:var(--ink);text-align:right}
+.isr-v.red{color:var(--red)}
+
+/* ══════════════════════════════════════════ GIORNI TABS */
+.days-tabs{margin-top:4rem}
+.tab-nav{display:flex;border-bottom:2px solid var(--border);overflow-x:visible;flex-wrap:wrap}
+.tab-btn{font-family:var(--ff-d);font-size:.85rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:1rem 1.8rem;border:none;background:transparent;cursor:pointer;color:var(--muted);border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:all .2s;flex-shrink:0}
+.tab-btn:hover{color:var(--ink)}
+.tab-btn.active{color:var(--red);border-bottom-color:var(--red)}
+.tab-panel{display:none}
+.tab-panel.active{display:grid;grid-template-columns:1fr 2fr;gap:3rem;padding:3rem 0 1rem;align-items:start}
+.day-num{font-family:var(--ff-d);font-size:5rem;font-weight:900;color:var(--red);line-height:1;margin-bottom:.5rem}
+.day-title{font-family:var(--ff-d);font-size:1.8rem;font-weight:900;color:var(--ink);letter-spacing:.04em;margin-bottom:.5rem;line-height:1.1}
+.day-date{font-size:.8rem;font-weight:600;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+.day-highlight{display:inline-flex;align-items:center;gap:.5rem;background:var(--red-pale);border:1px solid var(--red-pale2);color:var(--red);font-family:var(--ff-d);font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:.35rem .9rem;margin-top:1rem}
+.day-slot{display:grid;grid-template-columns:90px 1fr;gap:1.2rem;padding:1.1rem 0;border-bottom:1px solid var(--border);align-items:start}
+.day-slot:last-child{border-bottom:none}
+.slot-time{font-family:var(--ff-d);font-size:.88rem;font-weight:700;color:var(--red);letter-spacing:.03em;padding-top:.05rem;white-space:nowrap}
+.slot-title{font-size:.92rem;font-weight:700;color:var(--ink);margin-bottom:.25rem}
+.slot-desc{font-size:.82rem;color:var(--muted);line-height:1.65}
+.slot-tag{display:inline-block;margin-top:.4rem;background:var(--surface);border:1px solid var(--border);font-size:.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);padding:.2rem .6rem}
+
+/* ══════════════════════════════════════════ LUOGHI / MAPPA */
+.places-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:4rem;align-items:start;margin-top:4rem}
+.map-box{position:relative;border:1px solid var(--border);overflow:hidden;background:#f0f0f0;height:500px}
+/* Iframe frames — solo uno visibile alla volta */
+.map-frame{position:absolute;inset:0;opacity:0;pointer-events:none;transition:opacity .35s ease}
+.map-frame.active{opacity:1;pointer-events:all}
+.map-frame iframe{width:100%;height:100%;border:0;display:block}
+/* Label del posto attivo in basso */
+.map-active-label{position:absolute;bottom:0;left:0;right:0;z-index:10;background:rgba(12,12,14,.82);backdrop-filter:blur(10px);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:.65rem 1rem;gap:.5rem;pointer-events:none}
+.map-active-label span{font-family:var(--ff-d);font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.85);flex:1}
+#map-label-reset{pointer-events:all;background:rgba(255,255,255,.15);border:none;color:#fff;width:22px;height:22px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;border-radius:50%;transition:background .2s;opacity:0;visibility:hidden}
+#map-label-reset.show{opacity:1;visibility:visible}
+#map-label-reset:hover{background:rgba(255,255,255,.3)}
+/* Place items */
+.place-item{cursor:pointer;transition:background .2s,border-color .2s,transform .25s}
+.map-legend{position:absolute;top:1rem;left:1rem;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border:1px solid var(--border);padding:1rem 1.2rem;pointer-events:none}
+.map-legend-ttl{font-family:var(--ff-d);font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.7rem}
+.leg-item{display:flex;align-items:center;gap:.6rem;font-size:.75rem;font-weight:600;color:var(--ink);margin-bottom:.4rem}
+.leg-item:last-child{margin-bottom:0}
+.leg-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.leg-dot.p{background:var(--red)}
+.leg-dot.s{background:var(--ink)}
+/* Places list */
+.places-list-h{font-family:var(--ff-d);font-size:.65rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;margin-bottom:.8rem;margin-top:2rem}
+.places-list-h:first-child{margin-top:0}
+.places-list-h.p{color:var(--red)}
+.places-list-h.s{color:var(--muted)}
+.place-item{display:flex;align-items:flex-start;gap:1rem;padding:1rem 1.2rem;background:var(--white);border:1px solid var(--border);margin-bottom:.7rem;transition:border-color .2s,transform .2s}
+.place-item:hover{transform:translateX(4px)}
+.place-item.p:hover{border-color:var(--red)}
+.place-item.s:hover{border-color:var(--ink)}
+.pdot-w{width:36px;height:36px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.pdot{width:12px;height:12px;border-radius:50%}
+.pdot.p{background:var(--red);box-shadow:0 0 0 4px rgba(237,28,36,.15)}
+.pdot.s{background:var(--ink);box-shadow:0 0 0 4px rgba(26,26,36,.1)}
+.place-name{font-family:var(--ff-d);font-size:1.05rem;font-weight:800;color:var(--ink);letter-spacing:.03em;margin-bottom:.15rem}
+.place-addr{font-size:.78rem;color:var(--muted)}
+.place-tag{display:inline-block;margin-top:.35rem;font-size:.58rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:.2rem .6rem}
+.place-tag.p{background:var(--red-pale);color:var(--red)}
+.place-tag.s{background:var(--surface);color:var(--muted);border:1px solid var(--border)}
+
+/* ══════════════════════════════════════════ SPORT CARDS */
+.sports-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:4rem}
+.sport-card{background:var(--white);border:1px solid var(--border);overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s}
+.sport-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.1)}
+.sport-img-w{position:relative;overflow:hidden}
+.sport-img-w img{width:100%;height:260px;object-fit:cover;filter:brightness(.9) saturate(1.1);transition:transform .5s var(--ease),filter .4s;display:block}.sport-card:hover .sport-img-w img{transform:scale(1.04);filter:brightness(.95) saturate(1.2)}
+.sport-img-w::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(0,0,0,.4) 100%)}
+.sport-badge{position:absolute;top:1.2rem;left:1.2rem;z-index:2;background:var(--red);font-family:var(--ff-d);font-size:.58rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--white);padding:.28rem .75rem}
+.sport-badge.dark{background:var(--ink)}
+.sport-body{padding:1.6rem 2rem 2.2rem;background:var(--white)}
+.sport-card.street .sport-body{background:var(--ink)}
+.sport-title{font-family:var(--ff-d);font-size:2.2rem;font-weight:900;color:var(--ink);letter-spacing:.03em;margin-bottom:.8rem;line-height:1}
+.sport-card.street .sport-title{color:var(--white)}
+.sport-body p{font-size:.85rem;color:var(--muted);line-height:1.75}
+.sport-card.street .sport-body p{color:rgba(255,255,255,.5)}
+.sport-body p strong{color:var(--text)}
+.sport-card.street .sport-body p strong{color:rgba(255,255,255,.85)}
+
+/* ══════════════════════════════════════════ KIT */
+.kit-wrap{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-top:4rem}
+.kit-img-w{position:relative}
+.kit-img{width:100%;height:480px;object-fit:cover;display:block}
+.kit-text p{font-size:.92rem;color:var(--muted);line-height:1.9;margin-bottom:2rem}
+.kit-items{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+.kit-item{background:var(--surface);border:1px solid var(--border);padding:1rem 1.2rem;display:flex;align-items:center;gap:.9rem;transition:background .2s,border-color .2s}
+.kit-item:hover{background:var(--red-pale);border-color:rgba(237,28,36,.25)}
+.ki-num{font-family:var(--ff-d);font-size:1.8rem;font-weight:900;color:var(--red);line-height:1;flex-shrink:0;width:28px}
+.ki-name{font-size:.82rem;font-weight:600;color:var(--text)}
+.ki-qty{font-size:.68rem;color:var(--muted)}
+
+/* ══════════════════════════════════════════ SERVIZI */
+.services-row{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:4rem}
+.svc{background:var(--surface);border:1px solid var(--border);overflow:hidden}
+.svc-head{padding:1.3rem 2rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.9rem;background:var(--white)}
+.svc-icon{width:36px;height:36px;background:var(--red);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.svc-icon svg{width:16px;height:16px;stroke:var(--white);fill:none;stroke-width:2}
+.svc-head h3{font-family:var(--ff-d);font-size:1.15rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}
+.svc-body{padding:1.8rem 2rem}
+.svc-body p{font-size:.87rem;color:var(--muted);line-height:1.8;margin-bottom:.8rem}
+.svc-body p strong{color:var(--text)}
+.transport-price{display:inline-block;margin-top:1rem;font-family:var(--ff-d);font-size:1.6rem;font-weight:900;color:var(--ink);letter-spacing:.03em}
+.transport-price span{font-size:.8rem;font-weight:600;color:var(--muted);margin-left:.3rem}
+.pills{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.7rem}
+.pill{font-family:var(--ff-d);font-size:.63rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:var(--white);border:1px solid var(--border);color:var(--muted);padding:.3rem .8rem}
+
+/* ══════════════════════════════════════════ QUOTA */
+.quota-wrap{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:4rem;align-items:start}
+.quota-main{background:var(--white);border:2px solid var(--red);padding:3rem;position:relative;overflow:hidden}
+.quota-main::before{content:'';position:absolute;top:-80px;right:-80px;width:240px;height:240px;background:radial-gradient(circle,rgba(237,28,36,.09) 0%,transparent 65%);pointer-events:none}
+.quota-tag{font-family:var(--ff-d);font-size:.65rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.8rem}
+.quota-price{font-family:var(--ff-d);font-size:7rem;font-weight:900;color:var(--ink);line-height:1;letter-spacing:-.01em}
+.quota-price .eur{font-size:2.2rem;font-weight:700;color:var(--red);vertical-align:super;margin-right:.1em}
+.quota-note{font-size:.78rem;color:var(--muted);margin-bottom:2rem}
+.quota-ul{list-style:none;margin:1.5rem 0 2rem;border-top:1px solid var(--border)}
+.quota-ul li{display:flex;align-items:center;gap:.7rem;padding:.6rem 0;border-bottom:1px solid var(--border);font-size:.85rem;color:var(--text)}
+.quota-ul li::before{content:'✓';color:var(--red);font-weight:700;flex-shrink:0}
+.discounts{display:flex;flex-direction:column;gap:1rem}
+.disc-lbl{font-family:var(--ff-d);font-size:.65rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;display:block}
+.disc{background:var(--white);border:1px solid var(--border);border-left:3px solid var(--red);padding:1.4rem 1.8rem;transition:border-left-width .2s,box-shadow .2s}
+.disc:hover{border-left-width:5px;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.disc h4{font-family:var(--ff-d);font-size:1.05rem;font-weight:800;letter-spacing:.06em;color:var(--ink);margin-bottom:.35rem}
+.disc .perc{font-family:var(--ff-d);font-size:1.8rem;font-weight:900;color:var(--red);float:right;margin-top:-.2rem}
+.disc p{font-size:.82rem;color:var(--muted);line-height:1.6;clear:both}
+.disc-note{background:var(--red-pale);border:1px solid var(--red-pale2);padding:1.2rem 1.5rem;font-size:.82rem;color:var(--text);line-height:1.7;margin-top:.5rem}
+.disc-note strong{color:var(--ink)}
+
+/* ══════════════════════════════════════════ DOCUMENTI */
+.docs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:4rem}
+.doc-card{background:var(--white);border:1px solid var(--border);padding:2rem 1.6rem;transition:border-color .25s,transform .25s}
+.doc-card:hover{border-color:var(--red);transform:translateY(-4px)}
+.doc-n{font-family:var(--ff-d);font-size:3.5rem;font-weight:900;color:var(--red);line-height:1;margin-bottom:.6rem}
+.doc-card h4{font-size:.85rem;font-weight:700;color:var(--ink);margin-bottom:.4rem}
+.doc-card p{font-size:.76rem;color:var(--muted);line-height:1.65}
+
+/* ══════════════════════════════════════════ SICUREZZA */
+.safety-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--border);margin-top:4rem}
+.safe-item{padding:2.2rem 1.6rem;border-right:1px solid var(--border);text-align:center;transition:background .2s}
+.safe-item:last-child{border-right:none}
+.safe-item:hover{background:var(--red-pale)}
+.safe-item svg{width:28px;height:28px;stroke:var(--red);fill:none;stroke-width:1.5;margin:0 auto 1rem;display:block}
+.safe-item h4{font-size:.82rem;font-weight:700;color:var(--ink);margin-bottom:.3rem}
+.safe-item p{font-size:.73rem;color:var(--muted);line-height:1.55}
+
+/* ══════════════════════════════════════════ CONTATTI */
+.contacts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:4rem}
+.cc{background:var(--white);border:1px solid var(--border);padding:2.5rem 2rem;text-align:center;transition:border-color .25s,transform .3s var(--ease),box-shadow .3s}
+.cc:hover{border-color:var(--red);transform:translateY(-5px);box-shadow:0 16px 40px rgba(0,0,0,.08)}
+.cc-role{font-family:var(--ff-d);font-size:.6rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--red);margin-bottom:.8rem;display:block}
+.cc-name{font-family:var(--ff-d);font-size:1.9rem;font-weight:900;color:var(--ink);letter-spacing:.04em;line-height:1.1;margin-bottom:1.5rem}
+.cc-phone{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--ff-d);font-size:1rem;font-weight:700;letter-spacing:.04em;color:var(--ink);background:var(--surface);border:1px solid var(--border);padding:.65rem 1.4rem;transition:all .2s}
+.cc-phone:hover{background:var(--red);border-color:var(--red);color:var(--white)}
+.cc-phone svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+
+/* ══════════════════════════════════════════ CTA FINALE */
+.cta-sec{padding:9rem 2rem;text-align:center;background:var(--ink);position:relative;overflow:hidden}
+.cta-sec::before{content:'REDCOW';font-family:var(--ff-d);font-size:20vw;font-weight:900;color:rgba(255,255,255,.022);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;white-space:nowrap;line-height:1}
+.cta-sec .h2{font-size:clamp(3rem,7vw,6rem);position:relative;z-index:1}
+.cta-sec .lead-w{margin:.8rem auto 3rem;position:relative;z-index:1;text-align:center}
+.cta-btns{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;position:relative;z-index:1}
+
+/* ══════════════════════════════════════════ FOOTER */
+footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);padding:3.5rem 2rem 2rem}
+.footer-g{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.06)}
+.f-logo{font-family:var(--ff-d);font-size:1.7rem;font-weight:900;letter-spacing:.06em;display:block;margin-bottom:1rem}
+.f-logo .r{color:var(--red)}
+.f-logo .w{color:var(--white)}
+.f-desc{font-size:.8rem;color:rgba(255,255,255,.3);line-height:1.75}
+.footer-col h4{font-family:var(--ff-d);font-size:.6rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--white);margin-bottom:1.2rem}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:.6rem}
+.footer-col ul li a{font-size:.8rem;color:rgba(255,255,255,.28);transition:color .2s}
+.footer-col ul li a:hover{color:var(--red)}
+.footer-bottom{max-width:1160px;margin:1.8rem auto 0;display:flex;justify-content:space-between;align-items:center;font-size:.72rem;color:rgba(255,255,255,.18);flex-wrap:wrap;gap:.5rem}
+
+/* ══════════════════════════════════════════ REVEAL */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
+.reveal.visible{opacity:1;transform:none}
+.d1{transition-delay:.08s}
+.d2{transition-delay:.16s}
+.d3{transition-delay:.24s}
+
+/* ══════════════════════════════════════════ RESPONSIVE */
+
+/* ── Tablet / small laptop ≤ 960px ── */
+@media(max-width:960px){
+  /* Navbar */
+  .nav-menu{display:none}
+  .nav-menu.open{display:flex;flex-direction:column;position:fixed;top:66px;left:0;right:0;background:rgba(255,255,255,.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:1.2rem 2rem 2rem;z-index:899;gap:.2rem}
+  .nav-menu.open a{font-size:1rem;padding:.7rem 0;border-bottom:1px solid var(--border);display:block}
+  .nav-menu.open .ncta a{background:var(--red);color:var(--white);padding:.7rem 1.2rem;border:none;margin-top:.4rem;display:block;text-align:center}
+  .burger{display:flex}
+
+  /* Sections */
+  .sec{padding:4.5rem 0}
+  .wrap{padding:0 1.5rem}
+
+  /* Hero */
+  .hero-inner{padding:66px 1.5rem 0}
+  .hero-dband{flex-wrap:wrap;justify-content:center}
+  .hdb{min-width:120px;padding:.7rem 1.4rem}
+  .hero-ctas{flex-direction:column;align-items:center;gap:.7rem}
+  .hero-ctas .btn{width:100%;max-width:320px;justify-content:center}
+  .hero-bar{flex-wrap:wrap;justify-content:center}
+  .hbi{padding:1.2rem 2rem;min-width:140px}
+
+  /* Grids → single column */
+  .about-grid,
+  .kit-wrap,
+  .quota-wrap,
+  .services-row,
+  .places-wrap{grid-template-columns:1fr;gap:2.5rem}
+
+  /* About image */
+  .about-img{height:340px}
+  .about-img-wrap::before{width:80px;height:80px;top:-1rem;left:-1rem}
+
+  /* Sports */
+  .sports-grid{grid-template-columns:1fr 1fr;gap:1.2rem}
+  .sport-img-w img{height:200px}
+
+  /* Kit */
+  .kit-img{height:320px}
+  .kit-items{grid-template-columns:1fr 1fr}
+
+  /* Docs */
+  .docs-grid{grid-template-columns:1fr 1fr;gap:1rem}
+
+  /* Safety */
+  .safety-grid{grid-template-columns:1fr 1fr}
+
+  /* Contacts */
+  .contacts-grid{grid-template-columns:1fr 1fr}
+
+  /* Map */
+  .map-box{height:360px}
+
+  /* Tabs */
+  .tab-nav{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .tab-panel.active{grid-template-columns:1fr;gap:1.5rem}
+
+  /* Footer */
+  .footer-g{grid-template-columns:1fr 1fr;gap:2rem}
+  .hero-dband .hdb:last-child{border-right:none}
+}
+
+/* ── Mobile ≤ 640px ── */
+@media(max-width:640px){
+  /* Sections */
+  .sec{padding:3.5rem 0}
+  .wrap{padding:0 1.2rem}
+
+  /* Hero */
+  .hero{min-height:100svh}
+  .hero-camp{letter-spacing:.3em;font-size:clamp(1.1rem,5vw,1.8rem)}
+  .hero-tagline{letter-spacing:.15em;font-size:clamp(.85rem,3.5vw,1.1rem)}
+  .hero-pill{font-size:.65rem;padding:.38rem 1rem}
+  .hero-dband{flex-direction:column;align-items:stretch;width:100%;border:none;gap:0;margin-top:1.2rem}
+  .hdb{border-right:none;border-bottom:1px solid rgba(255,255,255,.1);padding:.65rem 1.2rem;flex-direction:row;justify-content:space-between;align-items:center}
+  .hdb:last-child{border-bottom:none}
+  .hdb-l{margin-bottom:0;font-size:.5rem}
+  .hdb-v{font-size:1rem}
+  .hero-ctas{margin-top:1.8rem;gap:.6rem}
+  .hero-ctas .btn{font-size:.78rem;padding:.85rem 1.6rem}
+  .hero-bar{flex-direction:column;border-top:1px solid rgba(255,255,255,.06)}
+  .hbi{border-right:none;border-bottom:1px solid rgba(255,255,255,.06);padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-direction:row;min-width:unset}
+  .hbi:last-child{border-bottom:none}
+  .hbi-n{font-size:1.4rem}
+  .hbi-l{font-size:.58rem;margin-top:0;margin-left:.5rem}
+
+  /* About */
+  .about-img{height:260px}
+  .about-img-wrap::before{display:none}
+  .about-text p{font-size:.9rem}
+
+  /* Sports → single column */
+  .sports-grid{grid-template-columns:1fr}
+  .sport-img-w img{height:220px}
+  .sport-title{font-size:1.8rem}
+
+  /* Kit */
+  .kit-img{height:240px}
+  .kit-wrap{gap:2rem}
+  .kit-items{grid-template-columns:1fr 1fr;gap:.5rem}
+  .ki-num{font-size:1.4rem}
+  .ki-name{font-size:.78rem}
+
+  /* Tabs / days */
+  .tab-btn{padding:.75rem .9rem;font-size:.73rem;letter-spacing:.06em}
+  .day-num{font-size:3.5rem}
+  .day-title{font-size:1.4rem}
+  .day-slot{grid-template-columns:72px 1fr;gap:.8rem}
+  .slot-time{font-size:.8rem}
+
+  /* Map */
+  .map-box{height:280px}
+  .map-hint{font-size:.62rem;padding:.5rem .8rem}
+  .place-name{font-size:.95rem}
+  .place-addr{font-size:.74rem}
+  .places-list-h{font-size:.58rem}
+
+  /* Docs */
+  .docs-grid{grid-template-columns:1fr;gap:.8rem}
+  .doc-n{font-size:2.5rem}
+  .doc-card{padding:1.4rem 1.2rem}
+
+  /* Safety */
+  .safety-grid{grid-template-columns:1fr 1fr;gap:0}
+  .safe-item{padding:1.6rem 1rem}
+  .safe-item h4{font-size:.78rem}
+  .safe-item p{font-size:.7rem}
+
+  /* Services */
+  .services-row{gap:1.2rem}
+  .transport-price{font-size:1.3rem}
+
+  /* Quota */
+  .quota-main{padding:2rem 1.5rem}
+  .quota-price{font-size:5rem}
+  .disc{padding:1rem 1.2rem}
+  .disc .perc{font-size:1.4rem}
+
+  /* Contacts */
+  .contacts-grid{grid-template-columns:1fr}
+  .cc{padding:2rem 1.5rem}
+  .cc-name{font-size:1.6rem}
+
+  /* Buttons */
+  .btn{font-size:.78rem;padding:.85rem 1.6rem}
+  .cta-sec{padding:5rem 1.2rem}
+  .cta-btns{flex-direction:column;align-items:center}
+  .cta-btns .btn{width:100%;max-width:320px;justify-content:center}
+
+  /* Footer */
+  .footer-g{grid-template-columns:1fr;gap:1.5rem}
+  .footer-bottom{flex-direction:column;text-align:center;gap:.3rem}
+  footer{padding:2.5rem 1.2rem 1.5rem}
+}
+
+/* ── Small phones ≤ 400px ── */
+@media(max-width:400px){
+  .wrap{padding:0 1rem}
+  .kit-items{grid-template-columns:1fr}
+  .safety-grid{grid-template-columns:1fr}
+  .hbi{padding:.85rem 1.2rem}
+  .hero-wm{font-size:clamp(64px,19vw,120px)}
+  .tab-btn{padding:.65rem .7rem;font-size:.68rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ════════════════ NAVBAR ════════════════ -->
+<nav class="nav" id="navbar">
+  <a href="#hero" class="nav-logo"><span class="r">RED</span><span class="bk">COW</span></a>
+  <ul class="nav-menu" id="navMenu">
+    <li><a href="#about">Il Camp</a></li>
+    <li><a href="#days">Programma</a></li>
+    <li><a href="#places">Luoghi</a></li>
+    <li><a href="#sports">Sport</a></li>
+    <li><a href="#kit">Kit</a></li>
+    <li><a href="#quota">Quote</a></li>
+    <li><a href="#contacts">Contatti</a></li>
+    <li class="ncta"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdbr3jS7t7S0JJBvXNFTiTvBPzT0/viewform" target="_blank" rel="noopener">Iscriviti ora</a></li>
+  </ul>
+  <div class="burger" id="burger"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- ════════════════ HERO ════════════════ -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pitch"></div>
+  <div class="hero-grain"></div>
+  <div class="hero-fade"></div>
+
+  <div class="hero-inner">
+    <div class="hero-pill">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 0 20M2 12h20"/></svg>
+      Estate Sportiva 2026
+    </div>
+
+    <span class="hero-wm"><span class="r">RED</span><span class="w">COW</span></span>
+    <div class="hero-camp">CAMP</div>
+
+    <div class="hero-tagline">
+      Gioca<span class="dot">·</span>Cresci<span class="dot">·</span>Divertiti
+    </div>
+
+    <!-- Date e luogo in evidenza sotto il tagline -->
+    <div class="hero-dband">
+      <div class="hdb">
+        <div class="hdb-l">Quando</div>
+        <div class="hdb-v accent">15 – 19 Giugno 2026</div>
+      </div>
+      <div class="hdb">
+        <div class="hdb-l">Dove</div>
+        <div class="hdb-v">Sergnano (CR)</div>
+      </div>
+      <div class="hdb">
+        <div class="hdb-l">Età</div>
+        <div class="hdb-v">6 – 13 anni</div>
+      </div>
+    </div>
+
+    <div class="hero-ctas">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdbr3jS7t7S0JJBvXNFTiTvBPzT0/viewform" target="_blank" rel="noopener" class="btn btn-red">
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>Iscriviti ora
+      </a>
+      <a href="#about" class="btn btn-ghost-w">Scopri il camp</a>
+    </div>
+  </div>
+
+  <div class="hero-bar">
+    <div class="hbi">
+      <div class="hbi-n">5</div>
+      <div class="hbi-l">Giorni di camp</div>
+    </div>
+    <div class="hbi">
+      <div class="hbi-n">130 €</div>
+      <div class="hbi-l">Quota settimanale</div>
+    </div>
+    <div class="hbi">
+      <div class="hbi-n">6 – 13</div>
+      <div class="hbi-l">Anni di età</div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span class="ticker-item">Calcio</span>
+    <span class="ticker-item">Padel</span>
+    <span class="ticker-item">Tennis</span>
+    <span class="ticker-item">Divertimento</span>
+    <span class="ticker-item">2026</span>
+    <span class="ticker-item">Calcio</span>
+    <span class="ticker-item">Padel</span>
+    <span class="ticker-item">Tennis</span>
+    <span class="ticker-item">Divertimento</span>
+    <span class="ticker-item">2026</span>
+  </div>
+</div>
+
+<!-- ════════════════ ABOUT ════════════════ -->
+<section class="sec sec-white" id="about">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="label">Chi siamo</span>
+      <h2 class="h2">Il gioco è alla base<br>di ogni <em>grande campione</em></h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-img-wrap reveal">
+        <img class="about-img" src="img/about.jpg" alt="Ragazzi che giocano a calcio">
+      </div>
+      <div class="about-text reveal d1">
+        <h2 class="h2" style="font-size:clamp(1.8rem,3.5vw,2.8rem);margin-bottom:1.4rem">
+          Divertimento e passione<br>sono il nostro <em>metodo</em>
+        </h2>
+        <p>RedCow Camp 2026 nasce con l'intento di <strong>trasmettere divertimento e passione</strong>, combinandoli ad allenamenti di calcio specifici e ad altre attività sportive extra.</p>
+        <p>Il gioco deve essere alla base di tutto: è dal gioco che nasce il divertimento, e dal divertimento nasce la voglia di migliorarsi. Le <strong>emozioni sono alla base di ogni buon apprendimento</strong>.</p>
+        <p>Aperto a <strong>ragazze e ragazzi</strong> dai 6 ai 13 anni — una settimana per crescere, fare amicizie nuove e vivere un'estate che lascia il segno.</p>
+        <div class="istrip">
+          <div class="isr"><span class="isr-k">Date</span><span class="isr-v red">15 – 19 Giugno 2026</span></div>
+          <div class="isr"><span class="isr-k">Luogo</span><span class="isr-v">Centro Sportivo Sergnanese (CR)</span></div>
+          <div class="isr"><span class="isr-k">Età</span><span class="isr-v">6 – 13 anni</span></div>
+          <div class="isr"><span class="isr-k">Orari</span><span class="isr-v">08:00 – 18:00</span></div>
+          <div class="isr"><span class="isr-k">Quota tutto incluso</span><span class="isr-v red">130 €</span></div>
+        </div>
+        <div style="margin-top:2.5rem">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdbr3jS7t7S0JJBvXNFTiTvBPzT0/viewform" target="_blank" rel="noopener" class="btn btn-red">
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>Iscriviti ora
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ 5 GIORNI / TABS ════════════════ -->
+<section class="sec sec-surface" id="days">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="label">Il programma</span>
+      <h2 class="h2">5 giorni,<br>5 <em>avventure</em></h2>
+      <p class="lead" style="margin-top:.9rem">Ogni giorno ha la sua identità. Stessi orari di accoglienza e pranzo, ogni mattina e pomeriggio è un'esperienza diversa.</p>
+    </div>
+    <div class="days-tabs reveal">
+      <div class="tab-nav" role="tablist">
+        <button class="tab-btn active" data-tab="0">Giorno 1</button>
+        <button class="tab-btn" data-tab="1">Giorno 2</button>
+        <button class="tab-btn" data-tab="2">Giorno 3</button>
+        <button class="tab-btn" data-tab="3">Giorno 4</button>
+        <button class="tab-btn" data-tab="4">Giorno 5</button>
+      </div>
+      <div class="tab-panels">
+
+        <!-- G1 -->
+        <div class="tab-panel active" data-panel="0">
+          <div class="day-meta">
+            <div class="day-num">01</div>
+            <div class="day-title">Benvenuti<br>al Camp</div>
+            <div class="day-date">Lunedì 15 Giugno</div>
+            <div class="day-highlight">⚽ Calcio</div>
+          </div>
+          <div class="day-schedule">
+            <div class="day-slot"><div class="slot-time">08:00 – 09:00</div><div><div class="slot-title">Pre-Camp — Accoglienza</div><div class="slot-desc">Arrivo, registrazione, distribuzione del kit ufficiale e presentazione dello staff e dei compagni di camp.</div></div></div>
+            <div class="day-slot"><div class="slot-time">09:00 – 12:00</div><div><div class="slot-title">Attività sportiva mattutina</div><div class="slot-desc">Giochi di conoscenza e rompighiaccio in campo. Attività motorie di coordinazione, esercitazioni tecniche individuali e prime mini-partite. Ci presentiamo col pallone tra i piedi.</div><span class="slot-tag">Calcio — Tecnica individuale</span></div></div>
+            <div class="day-slot"><div class="slot-time">12:00 – 14:00</div><div><div class="slot-title">Pranzo & Relax</div><div class="slot-desc">Pranzo incluso nella quota. Pausa e socializzazione tra i ragazzi.</div></div></div>
+            <div class="day-slot"><div class="slot-time">14:00 – 17:00</div><div><div class="slot-title">Attività sportiva pomeridiana</div><div class="slot-desc">Tornei a squadre con formazioni sorteggiate. Partite a tema e giochi popolari adattati al calcio. Primo pomeriggio di competizione sana e divertimento puro.</div><span class="slot-tag">Torneo — Partite a tema</span></div></div>
+            <div class="day-slot"><div class="slot-time">17:00 – 18:00</div><div><div class="slot-title">Post-Camp — Uscita</div><div class="slot-desc">Raccolta bambini. Supervisione garantita fino alle 18:00.</div></div></div>
+          </div>
+        </div>
+
+        <!-- G2 -->
+        <div class="tab-panel" data-panel="1">
+          <div class="day-meta">
+            <div class="day-num">02</div>
+            <div class="day-title">Sul Campo<br>da Padel</div>
+            <div class="day-date">Martedì 16 Giugno</div>
+            <div class="day-highlight">🏓 Padel — ⚽ Calcio</div>
+          </div>
+          <div class="day-schedule">
+            <div class="day-slot"><div class="slot-time">08:00 – 09:00</div><div><div class="slot-title">Pre-Camp — Accoglienza</div><div class="slot-desc">Arrivo e warm-up. Partenza verso i campi da padel di Pianengo.</div></div></div>
+            <div class="day-slot"><div class="slot-time">09:00 – 12:00</div><div><div class="slot-title">Attività sportiva mattutina</div><div class="slot-desc">Giornata extra dedicata al padel. Introduzione alle regole di base, esercitazioni a coppie, prime sensazioni con racchetta e palline. Staff a disposizione su ogni campo.</div><span class="slot-tag">Padel — Attività extra · Pianengo</span></div></div>
+            <div class="day-slot"><div class="slot-time">12:00 – 14:00</div><div><div class="slot-title">Pranzo & Relax</div><div class="slot-desc">Pranzo incluso. Rientro alla struttura principale per la pausa.</div></div></div>
+            <div class="day-slot"><div class="slot-time">14:00 – 17:00</div><div><div class="slot-title">Attività sportiva pomeridiana</div><div class="slot-desc">Ritorno al calcio con esercitazioni tecnico-tattiche, giochi motori a squadre e partite sport-specifiche. Lavoro sulle transizioni in modo ludico.</div><span class="slot-tag">Calcio — Esercitazioni tattiche</span></div></div>
+            <div class="day-slot"><div class="slot-time">17:00 – 18:00</div><div><div class="slot-title">Post-Camp — Uscita</div><div class="slot-desc">Raccolta bambini. Supervisione garantita fino alle 18:00.</div></div></div>
+          </div>
+        </div>
+
+        <!-- G3 -->
+        <div class="tab-panel" data-panel="2">
+          <div class="day-meta">
+            <div class="day-num">03</div>
+            <div class="day-title">Giornata<br>in Piscina</div>
+            <div class="day-date">Mercoledì 17 Giugno</div>
+            <div class="day-highlight">🏊 Piscina</div>
+          </div>
+          <div class="day-schedule">
+            <div class="day-slot"><div class="slot-time">08:00 – 09:00</div><div><div class="slot-title">Pre-Camp — Accoglienza</div><div class="slot-desc">Arrivo e preparativi. Briefing della giornata e partenza verso la piscina comunale di Crema.</div></div></div>
+            <div class="day-slot"><div class="slot-time">09:00 – 12:00</div><div><div class="slot-title">Attività sportiva mattutina</div><div class="slot-desc">Giornata in piscina. Giochi acquatici, staffette, attività di gruppo e libertà nell'acqua. Una pausa divertente e rigenerante a metà settimana.</div><span class="slot-tag">Piscina — Giochi acquatici · Crema</span></div></div>
+            <div class="day-slot"><div class="slot-time">12:00 – 14:00</div><div><div class="slot-title">Pranzo al Sacco & Relax</div><div class="slot-desc">Pranzo al sacco direttamente in piscina. Pausa all'aperto in un'atmosfera rilassata e conviviale.</div></div></div>
+            <div class="day-slot"><div class="slot-time">14:00 – 17:00</div><div><div class="slot-title">Attività sportiva pomeridiana</div><div class="slot-desc">Secondo slot in piscina. Giochi a squadre, acqua-polo semplificato e attività libere.</div><span class="slot-tag">Piscina — Giochi & libertà</span></div></div>
+            <div class="day-slot"><div class="slot-time">17:00 – 18:00</div><div><div class="slot-title">Post-Camp — Uscita</div><div class="slot-desc">Rientro e raccolta bambini. Supervisione garantita fino alle 18:00.</div></div></div>
+          </div>
+        </div>
+
+        <!-- G4 -->
+        <div class="tab-panel" data-panel="3">
+          <div class="day-meta">
+            <div class="day-num">04</div>
+            <div class="day-title">Racchetta<br>in Mano</div>
+            <div class="day-date">Giovedì 18 Giugno</div>
+            <div class="day-highlight">🎾 Tennis - ⚽ Calcio di Strada</div>
+          </div>
+          <div class="day-schedule">
+            <div class="day-slot"><div class="slot-time">08:00 – 09:00</div><div><div class="slot-title">Pre-Camp — Accoglienza</div><div class="slot-desc">Arrivo e warm-up mattutino. Organizzazione dei gruppi per la mattinata di tennis.</div></div></div>
+            <div class="day-slot"><div class="slot-time">09:00 – 12:00</div><div><div class="slot-title">Attività sportiva mattutina</div><div class="slot-desc">Giornata extra dedicata al tennis sui campi della struttura. Tecnica di base, coordinazione occhio-mano, scambi guidati e mini-tornei.</div><span class="slot-tag">Tennis — Attività extra</span></div></div>
+            <div class="day-slot"><div class="slot-time">12:00 – 14:00</div><div><div class="slot-title">Pranzo & Relax</div><div class="slot-desc">Pranzo incluso nella quota. Pausa e tempo libero.</div></div></div>
+            <div class="day-slot"><div class="slot-time">14:00 – 17:00</div><div><div class="slot-title">Attività sportiva pomeridiana — Calcio di Strada</div><div class="slot-desc">Torniamo indietro negli anni. Camminata al Parco Tarenzi e poi: porte formate da due zaini, squadre fatte al momento, senza casacche. Solo pallone e divertimento puro.</div><span class="slot-tag">⚽ Calcio di Strada — Parco Tarenzi</span></div></div>
+            <div class="day-slot"><div class="slot-time">17:00 – 18:00</div><div><div class="slot-title">Post-Camp — Uscita</div><div class="slot-desc">Raccolta bambini. Supervisione garantita fino alle 18:00.</div></div></div>
+          </div>
+        </div>
+
+        <!-- G5 -->
+        <div class="tab-panel" data-panel="4">
+          <div class="day-meta">
+            <div class="day-num">05</div>
+            <div class="day-title">Gran Finale<br>& Premiazioni</div>
+            <div class="day-date">Venerdì 19 Giugno</div>
+            <div class="day-highlight">🏆 Torneo finale</div>
+          </div>
+          <div class="day-schedule">
+            <div class="day-slot"><div class="slot-time">08:00 – 09:00</div><div><div class="slot-title">Pre-Camp — Accoglienza</div><div class="slot-desc">Ultimo arrivo della settimana. Energia alle stelle: oggi è il gran giorno.</div></div></div>
+            <div class="day-slot"><div class="slot-time">09:00 – 12:00</div><div><div class="slot-title">Attività sportiva mattutina</div><div class="slot-desc">Allenamento intenso con tutte le squadre del camp. Esercitazioni tecniche, partite a tema e preparazione al torneo del pomeriggio.</div><span class="slot-tag">Calcio — Allenamento finale</span></div></div>
+            <div class="day-slot"><div class="slot-time">12:00 – 14:00</div><div><div class="slot-title">Pranzo & Relax</div><div class="slot-desc">Pranzo incluso. Ultimo momento di pausa prima del gran finale.</div></div></div>
+            <div class="day-slot"><div class="slot-time">14:00 – 17:00</div><div><div class="slot-title">Attività sportiva pomeridiana — Torneo & Premiazioni</div><div class="slot-desc">Gran torneo finale del RedCow Camp 2026. Semifinali, finali e premiazione di tutti i partecipanti. Medaglie, foto di gruppo e i ricordi più belli dell'estate.</div></div></div>
+            <div class="day-slot"><div class="slot-time">17:00 – 18:00</div><div><div class="slot-title">Post-Camp — Arrivederci!</div><div class="slot-desc">Saluti finali, scambio di contatti e tanti ricordi. Ci vediamo al RedCow Camp 2027!</div></div></div>
+          </div>
+        </div>
+
+      </div><!-- /tab-panels -->
+    </div><!-- /days-tabs -->
+  </div>
+</section>
+
+<!-- ════════════════ LUOGHI ════════════════ -->
+<section class="sec sec-white" id="places">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="label">Dove ci trovi</span>
+      <h2 class="h2">I nostri <em>luoghi</em></h2>
+      <p class="lead" style="margin-top:.9rem">La base è il Centro Sportivo Sergnanese. Durante la settimana ci spostiamo per le attività extra: ogni giorno un posto diverso, ogni posto una nuova esperienza.</p>
+    </div>
+    <div class="places-wrap">
+      <!-- MAPPA -->
+      <div class="map-box reveal">
+        <!-- Schermata panoramica iniziale -->
+        <div class="map-frame active" id="mf-overview">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d23000!2d9.7!3d45.41!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sit!2sit!4v1700000001" width="100%" height="100%" style="border:0" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <!-- Centro Sportivo Sergnanese -->
+        <div class="map-frame" id="mf-0">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1200!2d9.7006454!3d45.4266634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4781287812610b13%3A0x35dbd29c1c2a0c82!2sA.S.D.%20SERGNANESE!5e0!3m2!1sit!2sit!4v1700000002" width="100%" height="100%" style="border:0" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <!-- Oratorio -->
+        <div class="map-frame" id="mf-1">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1200!2d9.704905!3d45.4257645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47812878221a7f4d%3A0x9ecccd02ebb07dd!2sOratorio!5e0!3m2!1sit!2sit!4v1700000003" width="100%" height="100%" style="border:0" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <!-- Oh Yeahh Padel -->
+        <div class="map-frame" id="mf-2">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1200!2d9.6943094!3d45.4062923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478127271ba8bb27%3A0xf93eb8b67abe3e2c!2sOh%20Yeahh!%20Padel%20Club!5e0!3m2!1sit!2sit!4v1700000004" width="100%" height="100%" style="border:0" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <!-- Forus Crema Piscina -->
+        <div class="map-frame" id="mf-3">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1200!2d9.6792213!3d45.3696865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478137104eb9391d%3A0x14b46489524ee35e!2sForus%20Crema!5e0!3m2!1sit!2sit!4v1700000005" width="100%" height="100%" style="border:0" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <!-- Parco Tarenzi -->
+        <div class="map-frame" id="mf-4">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1200!2d9.7058767!3d45.427120!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478128499171e491%3A0xed2e5454c253f6d0!2sCity%20park%20Tarenzi!5e0!3m2!1sit!2sit!4v1700000006" width="100%" height="100%" style="border:0" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <!-- Label posto attivo -->
+        <div class="map-active-label" id="map-label">
+          <span id="map-label-text">Panoramica area</span>
+          <button id="map-label-reset" title="Torna alla panoramica">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- LISTA -->
+      <div class="reveal d1">
+        <div class="places-list-h p">Sedi principali</div>
+        <div class="place-item p" data-place="0" data-name="Centro Sportivo Sergnanese" style="cursor:pointer">
+          <div class="pdot-w"><div class="pdot p"></div></div>
+          <div><div class="place-name">Centro Sportivo Sergnanese</div><div class="place-addr">Via Vallarsa, Sergnano (CR)</div><span class="place-tag p">Base operativa del camp</span></div>
+        </div>
+        <div class="place-item p" data-place="1" data-name="Oratorio S. Francesco e S. Chiara" style="cursor:pointer">
+          <div class="pdot-w"><div class="pdot p"></div></div>
+          <div><div class="place-name">Oratorio S. Francesco e S. Chiara</div><div class="place-addr">Via al Binengo, 3, Sergnano (CR)</div><span class="place-tag p">Struttura di supporto</span></div>
+        </div>
+        <div class="places-list-h s">Attività extra</div>
+        <div class="place-item s" data-place="2" data-name="Oh Yeahh! Padel Club" style="cursor:pointer">
+          <div class="pdot-w"><div class="pdot s"></div></div>
+          <div><div class="place-name">Oh Yeahh! Padel Club</div><div class="place-addr">Via Roma, 92, Pianengo (CR)</div><span class="place-tag s">Padel — Giorno 2</span></div>
+        </div>
+        <div class="place-item s" data-place="3" data-name="Forus Crema – Piscina" style="cursor:pointer">
+          <div class="pdot-w"><div class="pdot s"></div></div>
+          <div><div class="place-name">Forus Crema – Piscina</div><div class="place-addr">Via Indipendenza, 99, Crema (CR)</div><span class="place-tag s">Piscina — Giorno 3</span></div>
+        </div>
+        <div class="place-item s" data-place="4" data-name="Parco Tarenzi" style="cursor:pointer">
+          <div class="pdot-w"><div class="pdot s"></div></div>
+          <div><div class="place-name">Parco Tarenzi</div><div class="place-addr">Vicolo S. Martino, Sergnano (CR)</div><span class="place-tag s">Calcio di Strada — Giorno 4</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ SPORT ════════════════ -->
+<section class="sec sec-surface" id="sports">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="label">Le attività</span>
+      <h2 class="h2">Calcio e attività<br><em>sportive extra</em></h2>
+      <p class="lead" style="margin-top:.9rem">Il calcio è lo sport principale. Durante la settimana si aggiungono attività extra per vivere esperienze nuove ogni giorno.</p>
+    </div>
+    <div class="sports-grid">
+      <!-- CALCIO -->
+      <div class="sport-card reveal">
+        <div class="sport-img-w">
+          <span class="sport-badge">Sport principale</span>
+          <img src="img/calcio.jpg" alt="Calcio">
+        </div>
+        <div class="sport-body">
+          <h3 class="sport-title">Calcio</h3>
+          <p>Il calcio è il cuore del RedCow Camp. <strong>Il gioco e il divertimento sono alla base dello sviluppo del giovane calciatore</strong>: esercitazioni tecniche, giochi popolari adattati al pallone, tornei, partite a tema e attività motorie. Ogni momento valorizza ogni partecipante, dal principiante al più esperto.</p>
+        </div>
+      </div>
+      <!-- CALCIO DI STRADA -->
+      <div class="sport-card street reveal d1">
+        <div class="sport-img-w">
+          <span class="sport-badge dark">Pomeriggio speciale</span>
+          <img src="img/strada.jpg" alt="Calcio di strada">
+        </div>
+        <div class="sport-body">
+          <h3 class="sport-title">Calcio di Strada</h3>
+          <p><strong>Torniamo indietro negli anni.</strong> Porte formate da due zaini, squadre fatte al momento, senza casacche. Il minimo indispensabile per il massimo divertimento. Il calcio nella sua forma più pura.</p>
+        </div>
+      </div>
+      <!-- PADEL -->
+      <div class="sport-card reveal d2">
+        <div class="sport-img-w">
+          <span class="sport-badge">Attività extra</span>
+          <img src="img/padel.jpg" alt="Padel">
+        </div>
+        <div class="sport-body">
+          <h3 class="sport-title">Padel</h3>
+          <p>Una mattinata ai campi da padel di Pianengo. <strong>Attività extra</strong> per scoprire uno degli sport più divertenti del momento in sessioni dinamiche e coinvolgenti per tutti i livelli.</p>
+        </div>
+      </div>
+      <!-- TENNIS -->
+      <div class="sport-card reveal d3">
+        <div class="sport-img-w">
+          <span class="sport-badge">Attività extra</span>
+          <img src="img/tennis.jpg" alt="Tennis">
+        </div>
+        <div class="sport-body">
+          <h3 class="sport-title">Tennis</h3>
+          <p>Una mattinata sui campi da tennis della struttura. <strong>Attività extra</strong> per avvicinarsi al tennis con coordinazione, tecnica di base e piccoli tornei tra compagni.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ KIT ════════════════ -->
+<section class="sec sec-white" id="kit">
+  <div class="wrap">
+    <div class="kit-wrap">
+      <div class="kit-img-w reveal">
+        <img class="kit-img" src="img/kit.jpg" alt="Kit sportivo ufficiale">
+      </div>
+      <div class="reveal d1">
+        <span class="label label-mid">Incluso nella quota</span>
+        <h2 class="h2" style="margin-bottom:1.2rem">Il tuo kit<br><em>ufficiale</em></h2>
+        <p class="kit-text" style="font-size:.92rem;color:var(--muted);line-height:1.9;margin-bottom:2rem">Ogni partecipante riceve all'inizio della settimana il kit ufficiale RedCow Camp 2026. Abbigliamento tecnico completo per dare il massimo — dentro e fuori dal campo.</p>
+        <div class="kit-items">
+          <div class="kit-item"><div class="ki-num">3</div><div><div class="ki-name">Maglie Tecniche</div><div class="ki-qty">3 pezzi</div></div></div>
+          <div class="kit-item"><div class="ki-num">2</div><div><div class="ki-name">Pantaloncini</div><div class="ki-qty">2 pezzi</div></div></div>
+          <div class="kit-item"><div class="ki-num">2</div><div><div class="ki-name">Calzettoni</div><div class="ki-qty">2 paia</div></div></div>
+          <div class="kit-item"><div class="ki-num">1</div><div><div class="ki-name">Zainetto</div><div class="ki-qty">1 pezzo</div></div></div>
+          <div class="kit-item"><div class="ki-num">1</div><div><div class="ki-name">Borraccia</div><div class="ki-qty">1 pezzo</div></div></div>
+          <div class="kit-item"><div class="ki-num">1</div><div><div class="ki-name">Pallone</div><div class="ki-qty">1 pezzo</div></div></div>
+        </div>
+        <div style="margin-top:2.5rem">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdbr3jS7t7S0JJBvXNFTiTvBPzT0/viewform" target="_blank" rel="noopener" class="btn btn-dark">
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>Prenota il tuo posto
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ SERVIZI ════════════════ -->
+<section class="sec sec-surface" id="services">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="label">Tutto incluso</span>
+      <h2 class="h2">Pranzo &<br><em>Trasporti</em></h2>
+    </div>
+    <div class="services-row">
+      <div class="svc reveal">
+        <div class="svc-head">
+          <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
+          <h3>Pranzo</h3>
+        </div>
+        <div class="svc-body">
+          <p>Il pranzo è <strong>incluso nella quota</strong> per tutti i giorni del camp. Menù semplice e bilanciato, pensato per i ragazzi.</p>
+          <p>Nella giornata dedicata alla piscina è previsto il <strong>pranzo al sacco</strong> consumato direttamente in loco.</p>
+          <p>Allergie e intolleranze alimentari sono gestite con cura — basta indicarle nel modulo di iscrizione.</p>
+        </div>
+      </div>
+      <div class="svc reveal d1">
+        <div class="svc-head">
+          <div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="22" height="16" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="19" x2="12" y2="21"/></svg></div>
+          <h3>Trasporto</h3>
+        </div>
+        <div class="svc-body">
+          <p>Servizio pulmino <strong>opzionale</strong> per chi arriva dai comuni limitrofi. Un costo contenuto per facilitare la partecipazione di tutti.</p>
+          <div class="transport-price">+25 €<span>a bambino / settimana</span></div>
+          <p style="margin-top:.8rem">Comuni serviti:</p>
+          <div class="pills">
+            <span class="pill">Mozzanica</span>
+            <span class="pill">Pianengo</span>
+            <span class="pill">Casale Cremasco</span>
+            <span class="pill">Camisano</span>
+            <span class="pill">Vidolasco</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ QUOTA ════════════════ -->
+<section class="sec sec-white" id="quota">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="label label-mid">Iscrizione</span>
+      <h2 class="h2">Quota di<br><em>partecipazione</em></h2>
+    </div>
+    <div class="quota-wrap">
+      <div class="quota-main reveal">
+        <span class="quota-tag">Tutto incluso · settimana completa</span>
+        <div class="quota-price"><span class="eur">€</span>130</div>
+        <div class="quota-note">A partecipante · IVA inclusa</div>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdbr3jS7t7S0JJBvXNFTiTvBPzT0/viewform" target="_blank" rel="noopener" class="btn btn-red" style="width:100%;justify-content:center">
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>Iscriviti ora
+        </a>
+        <ul class="quota-ul">
+          <li>5 giorni di attività sportive complete</li>
+          <li>Kit ufficiale RedCow Camp 2026</li>
+          <li>Pranzo tutti i giorni (incluso pranzo al sacco)</li>
+          <li>Copertura assicurativa</li>
+          <li>Staff tecnico preparato</li>
+          <li>Tesseramento sportivo</li>
+        </ul>
+      </div>
+      <div class="discounts reveal d1">
+        <span class="disc-lbl">Agevolazioni</span>
+        <div class="disc">
+          <span class="perc">−5%</span>
+          <h4>Sconto Sergnano & Tesserati</h4>
+          <p>Se abiti a Sergnano oppure sei tesserato con la <strong>ASD Sergnanese</strong> o il <strong>GSO Sergnano</strong>, hai diritto al 5% di sconto sulla quota.</p>
+        </div>
+        <div class="disc">
+          <span class="perc">−5%</span>
+          <h4>Porta un Amico</h4>
+          <p>Porta un amico non ancora tesserato con ASD Sergnanese o GSO Sergnano: <strong>entrambi ottenete il 5% di sconto</strong>.</p>
+        </div>
+        <div class="disc-note">
+          <strong>Non aspettare per assicurarti il tuo posto al camp!</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ DOCUMENTI ════════════════ -->
+<section class="sec sec-surface" id="docs">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="label">Come iscriversi</span>
+      <h2 class="h2">Documenti <em>richiesti</em></h2>
+      <p class="lead" style="margin-top:.8rem">Tutto in digitale tramite il form online. Semplice e veloce.</p>
+    </div>
+    <div class="docs-grid">
+      <div class="doc-card reveal">
+        <div class="doc-n">01</div>
+        <h4>Visita Medica</h4>
+        <p>Certificato medico sportivo in corso di validità. Obbligatorio per partecipare alle attività.</p>
+      </div>
+      <div class="doc-card reveal d1">
+        <div class="doc-n">02</div>
+        <h4>Modulo di Iscrizione</h4>
+        <p>Compilabile online tramite il form dedicato. Include dati anagrafici e tutte le informazioni necessarie.</p>
+      </div>
+      <div class="doc-card reveal d2">
+        <div class="doc-n">03</div>
+        <h4>Liberatorie Firmate</h4>
+        <p>Liberatoria per foto e video e per la loro pubblicazione sui social. Liberatoria per il trattamento dei dati personali. Firmate da un genitore o tutore.</p>
+      </div>
+      <div class="doc-card reveal d3">
+        <div class="doc-n">04</div>
+        <h4>Documento Sanitario</h4>
+        <p>Scheda per allergie e intolleranze alimentari. Da compilare obbligatoriamente per una gestione sicura dei pasti.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ SICUREZZA ════════════════ -->
+<section class="sec sec-white">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="label">Tranquillità totale</span>
+      <h2 class="h2">Sicurezza &<br><em>qualità</em></h2>
+    </div>
+    <div class="safety-grid reveal">
+      <div class="safe-item">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <h4>Assicurazione</h4>
+        <p>Copertura assicurativa completa per ogni partecipante per tutta la durata del camp.</p>
+      </div>
+      <div class="safe-item">
+        <svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2m-6 9l2 2 4-4"/></svg>
+        <h4>Registro Presenze</h4>
+        <p>Registro giornaliero e monitoraggio continuo di ogni bambino durante tutte le attività.</p>
+      </div>
+      <div class="safe-item">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 7 7l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 23 17z"/></svg>
+        <h4>Contatto di Emergenza</h4>
+        <p>Numero di emergenza registrato per ogni partecipante. I genitori sono sempre raggiungibili.</p>
+      </div>
+      <div class="safe-item">
+        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <h4>Allergie & Intolleranze</h4>
+        <p>Ogni intolleranza alimentare certificata è registrata, comunicata allo staff e rispettata in ogni pasto.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ CONTATTI ════════════════ -->
+<section class="sec sec-surface" id="contacts">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="label">Siamo qui per te</span>
+      <h2 class="h2">Contattaci</h2>
+      <p class="lead" style="margin-top:.8rem">Per informazioni sul camp o sulle iscrizioni, contatta uno dei tre referenti</p>
+    </div>
+    <div class="contacts-grid">
+      <div class="cc reveal">
+        <span class="cc-role">Mister</span>
+        <div class="cc-name">Benelli<br>Alessandro</div>
+        <a href="tel:+393803876812" class="cc-phone">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 7 7l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 23 17z"/></svg>
+          380 387 6812
+        </a>
+      </div>
+      <div class="cc reveal d1">
+        <span class="cc-role">Mister</span>
+        <div class="cc-name">Facco<br>Federico</div>
+        <a href="tel:+393703475590" class="cc-phone">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 7 7l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 23 17z"/></svg>
+          370 347 5590
+        </a>
+      </div>
+      <div class="cc reveal d2">
+        <span class="cc-role">Mister</span>
+        <div class="cc-name">Scorsetti<br>Federico</div>
+        <a href="tel:+393401661553" class="cc-phone">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 7 7l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 23 17z"/></svg>
+          340 166 1553
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ CTA FINALE ════════════════ -->
+<section class="cta-sec">
+  <div class="wrap">
+    <span class="label label-faint" style="display:block;text-align:center;margin-bottom:1rem">Iscriviti ora</span>
+    <h2 class="h2 h2w" style="text-align:center">Pronto a<br>scendere in <em>campo?</em></h2>
+    <p class="lead lead-w" style="text-align:center;margin:.8rem auto 3rem">Le iscrizioni sono aperte online. Non aspettare — i posti sono limitati.</p>
+    <div class="cta-btns">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdbr3jS7t7S0JJBvXNFTiTvBPzT0/viewform" target="_blank" rel="noopener" class="btn btn-red">
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>Compila il form di iscrizione
+      </a>
+      <a href="#contacts" class="btn btn-ghost-w">Contattaci</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ FOOTER ════════════════ -->
+<footer>
+  <div class="footer-g">
+    <div>
+      <a href="#hero" class="f-logo"><span class="r">RED</span><span class="w">COW</span></a>
+      <p class="f-desc">Summer camp di calcio e attività sportive extra<br>per ragazze e ragazzi dai 6 ai 13 anni.<br>Centro Sportivo Sergnanese — 15/19 Giugno 2026</p>
+    </div>
+    <div class="footer-col">
+      <h4>Camp</h4>
+      <ul>
+        <li><a href="#about">Chi siamo</a></li>
+        <li><a href="#days">Programma</a></li>
+        <li><a href="#places">Luoghi</a></li>
+        <li><a href="#sports">Attività</a></li>
+        <li><a href="#kit">Kit</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Info</h4>
+      <ul>
+        <li><a href="#services">Pranzo & Trasporti</a></li>
+        <li><a href="#quota">Quota & Sconti</a></li>
+        <li><a href="#docs">Documenti</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Iscriviti</h4>
+      <ul>
+        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdbr3jS7t7S0JJBvXNFTiTvBPzT0/viewform" target="_blank" rel="noopener">Form online</a></li>
+        <li><a href="#contacts">Contatti</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 RedCow Camp — Tutti i diritti riservati.</span>
+    <span>Centro Sportivo Sergnanese (CR) · 15 – 19 Giugno 2026</span>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// Navbar shadow
+window.addEventListener('scroll',()=>document.getElementById('navbar').classList.toggle('scrolled',scrollY>20));
+
+// Tabs
+document.querySelectorAll('.tab-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const i=btn.dataset.tab;
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelector(`.tab-panel[data-panel="${i}"]`).classList.add('active');
+  });
+});
+
+// Burger
+const burger=document.getElementById('burger'),menu=document.getElementById('navMenu');
+burger.addEventListener('click',()=>{
+  menu.classList.toggle('open');
+  const b=burger.querySelectorAll('span');
+  if(menu.classList.contains('open')){b[0].style.transform='translateY(7px) rotate(45deg)';b[1].style.opacity='0';b[2].style.transform='translateY(-7px) rotate(-45deg)'}
+  else{b.forEach(x=>{x.style.transform='';x.style.opacity=''})}
+});
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  menu.classList.remove('open');
+  burger.querySelectorAll('span').forEach(b=>{b.style.transform='';b.style.opacity=''});
+}));
+
+// ═══ MAPPA INTERATTIVA — switcher iframe puro, zero dipendenze ═══
+(function(){
+  var RED = '#ed1c24', DARK = '#1a1a24';
+  var activeIdx = null;
+
+  var label     = document.getElementById('map-label-text');
+  var resetBtn  = document.getElementById('map-label-reset');
+
+  function showFrame(id) {
+    document.querySelectorAll('.map-frame').forEach(function(f){ f.classList.remove('active'); });
+    var f = document.getElementById(id);
+    if(f) f.classList.add('active');
+  }
+
+  function selectPlace(idx) {
+    var items = document.querySelectorAll('[data-place]');
+    // Reset tutti
+    items.forEach(function(el){
+      el.style.borderColor = '';
+      el.style.background  = '';
+      el.style.transform   = '';
+    });
+
+    if(idx === activeIdx) {
+      // Deseleziona → torna panoramica
+      activeIdx = null;
+      showFrame('mf-overview');
+      label.textContent = 'Panoramica area';
+      resetBtn.classList.remove('show');
+      return;
+    }
+
+    activeIdx = idx;
+    var el   = document.querySelector('[data-place="'+idx+'"]');
+    var type = el ? el.classList.contains('p') ? 'p' : 's' : 's';
+    var name = el ? el.dataset.name : '';
+    var col  = type === 'p' ? RED : DARK;
+
+    if(el) {
+      el.style.borderColor = col;
+      el.style.background  = type === 'p' ? 'rgba(237,28,36,.06)' : 'rgba(26,26,36,.05)';
+      el.style.transform   = 'translateX(6px)';
+      el.scrollIntoView({ behavior:'smooth', block:'nearest' });
+    }
+
+    showFrame('mf-'+idx);
+    label.textContent = name;
+    resetBtn.classList.add('show');
+  }
+
+  // Click su card lista
+  document.querySelectorAll('[data-place]').forEach(function(el){
+    el.addEventListener('click', function(){ selectPlace(parseInt(el.dataset.place)); });
+  });
+
+  // Tasto reset
+  if(resetBtn) {
+    resetBtn.addEventListener('click', function(e){
+      e.stopPropagation();
+      selectPlace(activeIdx); // chiama deseleziona
+    });
+  }
+})();
+</script>
+</body>
+</html>
